@@ -1,2 +1,6 @@
 hello world!
-add new_branch_02
+<<<<<<< HEAD
+add new_branch_01
+=======
+add new_branch_01
+>>>>>>> new_branch_01
