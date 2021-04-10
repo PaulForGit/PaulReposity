@@ -1,5 +1,7 @@
 package com.example.boot.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,12 +17,13 @@ import java.util.Set;
 @Table(name="school")
 public class School {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long schId;
     @Column
     private String schName;
     @Column
     private String schAdress;
+    @JsonIgnore
     @OneToMany(targetEntity = Student.class,fetch = FetchType.LAZY,mappedBy = "sch")
     private Set<Student> stus;
 

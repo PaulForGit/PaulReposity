@@ -1,14 +1,12 @@
 server:
-  port: 8081
+  port: 8080
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/local_db?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
-    username: paul
-    password: wz132465
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:/Applications/IntelliJ IDEA.app/Contents/bin/identifier.sqlite
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
-  jooq:
-    sql-dialect: org.hibernate.dialect.MySQL8Dialect
+    database-platform: com.example.boot.configuration.SQLiteDialect
+    open-in-view: false
